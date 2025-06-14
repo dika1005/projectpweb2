@@ -32,6 +32,15 @@ Route::middleware(['auth', IsAdmin::class])->group(function () {
     Route::get('/admin/orders/history', [AdminController::class, 'historyOrders'])->name('admin.orders.history');
 
 
+    // Kelola semua pesanan oleh admin
+    Route::get('/admin/orders', [AdminController::class, 'manageOrders'])->name('admin.orders.manage');
+
+    // (Optional) Ubah status pesanan
+    Route::put('/admin/orders/{order}/status', [AdminController::class, 'updateOrderStatus'])->name('admin.orders.updateStatus');
+
+
+
+
     Route::prefix('admin/products')->name('admin.product.')->group(function () {
         Route::get('/', [AdminController::class, 'productIndex'])->name('index');
         Route::get('/create', [AdminController::class, 'productCreate'])->name('create');

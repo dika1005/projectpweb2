@@ -23,7 +23,7 @@
                                     #</th>
                                 <th
                                     class="px-4 py-2 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">
-                                    User</th>
+                                    Pelanggan</th>
                                 <th
                                     class="px-4 py-2 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">
                                     Produk</th>
@@ -38,13 +38,7 @@
                                     Status</th>
                                 <th
                                     class="px-4 py-2 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">
-                                    Alamat</th>
-                                <th
-                                    class="px-4 py-2 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">
-                                    HP</th>
-                                <th
-                                    class="px-4 py-2 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">
-                                    Tanggal</th>
+                                    Aksi</th>
                             </tr>
                         </thead>
                         <tbody class="bg-white divide-y divide-gray-200">
@@ -55,19 +49,34 @@
                                     <td class="px-4 py-2">{{ $order->product->name ?? '-' }}</td>
                                     <td class="px-4 py-2">{{ $order->quantity }}</td>
                                     <td class="px-4 py-2">Rp {{ number_format($order->total_price, 0, ',', '.') }}</td>
-                                    <td class="px-4 py-2">{{ $order->status }}</td>
-                                    <td class="px-4 py-2">{{ $order->address }}</td>
-                                    <td class="px-4 py-2">{{ $order->phone }}</td>
-                                    <td class="px-4 py-2">{{ $order->created_at->format('d-m-Y H:i') }}</td>
+                                    <td class="px-4 py-2">
+                                        <form action="{{ route('admin.orders.updateStatus', $order->id) }}" method="POST"
+                                            class="flex items-center gap-2">
+                                            @csrf
+                                            @method('PUT')
+                                            <select name="status" class="border px-2 py-1 rounded text-sm">
+                                                <option value="Pending" {{ $order->status === 'Pending' ? 'selected' : '' }}>
+                                                    Pending</option>
+                                                <option value="Process" {{ $order->status === 'Process' ? 'selected' : '' }}>
+                                                    Process</option>
+                                                <option value="Success" {{ $order->status === 'Success' ? 'selected' : '' }}>
+                                                    Success</option>
+                                            </select>
+                                    </td>
+                                    <td class="px-4 py-2">
+                                        <button type="submit"
+                                            class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded text-sm">
+                                            Ubah
+                                        </button>
+                                        </form>
+                                    </td>
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="9" class="text-center text-gray-500 px-4 py-3">Belum ada riwayat pesanan.
-                                    </td>
+                                    <td colspan="7" class="text-center text-gray-500 px-4 py-3">Belum ada pesanan.</td>
                                 </tr>
                             @endforelse
                         </tbody>
-
                     </table>
                 </div>
 

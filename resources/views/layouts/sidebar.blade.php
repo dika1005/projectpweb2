@@ -42,7 +42,7 @@
             <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M9 17v-2a4 4 0 014-4h3m4 4v-4a4 4 0 00-4-4H5a4 4 0 00-4 4v4" />
+                    d="M9 17v-2a2 2 0 012-2h2a2 2 0 012 2v2m4 0V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2z" />
             </svg>
             <span>Pesanan Saya</span>
         </a>
@@ -69,13 +69,13 @@
                 <div x-show="open" x-transition class="mt-2 ml-4 pl-4 border-l-2 border-gray-600 space-y-2">
                     <a href="{{ route('admin.product.index') }}"
                         class="block px-4 py-2 rounded-md text-sm transition duration-200
-                                                      {{ request()->routeIs('admin.product.index') ? 'bg-gray-700' : 'hover:bg-gray-600' }}">
+                                                          {{ request()->routeIs('admin.product.index') ? 'bg-gray-700' : 'hover:bg-gray-600' }}">
                         Lihat Data Produk
                     </a>
 
                     <a href="{{ route('admin.product.create') }}"
                         class="block px-4 py-2 rounded-md text-sm transition duration-200
-                                                      {{ request()->routeIs('admin.product.create') ? 'bg-gray-700' : 'hover:bg-gray-600' }}">
+                                                          {{ request()->routeIs('admin.product.create') ? 'bg-gray-700' : 'hover:bg-gray-600' }}">
                         Tambah Data Produk
                     </a>
 
@@ -87,13 +87,25 @@
                 </div>
             </div>
 
-            <a href="{{ route('admin.orders.history') }}"
+            <a href="{{ route('admin.orders.manage') }}"
                 class="flex items-center px-4 py-2 rounded-md transition duration-200 
-                                   {{ request()->routeIs('admin.orders.history') ? 'bg-gray-700 text-white' : 'hover:bg-gray-700 text-gray-300' }}">
+               {{ request()->routeIs('admin.orders.manage') ? 'bg-gray-700 text-white' : 'hover:bg-gray-700 text-gray-300' }}">
                 <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M9 17v-2a4 4 0 014-4h3m4 4v-4a4 4 0 00-4-4H5a4 4 0 00-4 4v4" />
+                        d="M9 17v-2a2 2 0 012-2h2a2 2 0 012 2v2m4 0V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2z" />
+                </svg>
+                <span>Kelola Pesanan</span>
+            </a>
+
+
+            <a href="{{ route('admin.orders.history') }}"
+                class="flex items-center px-4 py-2 rounded-md transition duration-200 
+                                       {{ request()->routeIs('admin.orders.history') ? 'bg-gray-700 text-white' : 'hover:bg-gray-700 text-gray-300' }}">
+                <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
                 <span>Riwayat Pemesanan</span>
             </a>

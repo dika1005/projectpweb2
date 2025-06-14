@@ -118,12 +118,38 @@ class AdminController extends Controller
 
     public function historyOrders()
     {
-        $orders = Order::with('product')
-            ->where('user_id', Auth::id())
-            ->where('status', 'Success')
+        $orders = Order::with(['product', 'user']) // <- tambahkan 'user' juga ya kalau mau tampilkan nama
+            ->where('status', 'Success') // ⬅️ tampilkan semua pesanan yang sudah sukses
             ->latest()
             ->get();
 
         return view('admin.order.history', compact('orders'));
+    }
+
+
+
+    // Menampilkan semua pesanan
+    public function manageOrders()
+    {
+        $orders = Order::with('user', 'product')
+            ->where('status', '!=', 'Success') // ⬅️ hanya tampilkan yang belum success
+            ->latest()
+            ->get();
+
+        return view('admin.order.manage', compact('orders'));
+    }
+
+
+    // Mengubah status pesanan
+    public function updateOrderStatus(Request $request, Order $order)
+    {
+        $request->validate([
+            'status' => 'required|in:Pending,Process,Success',
+        ]);
+
+        $order->status = $request->status;
+        $order->save();
+
+        return back()->with('success', 'Status pesanan berhasil diperbarui!');
     }
 }
