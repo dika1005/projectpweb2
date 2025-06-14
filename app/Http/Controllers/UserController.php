@@ -9,10 +9,16 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
+
+    public function showProducts()
+    {
+        $products = Product::latest()->paginate(12);
+        return view('user.order.index', compact('products'));
+    }
     // Form pemesanan
     public function orderForm(Product $product)
     {
-        return view('orders.create', compact('product'));
+        return view('user.order.order', compact('product'));
     }
 
     // Proses simpan pesanan
@@ -24,8 +30,15 @@ class UserController extends Controller
             'quantity' => 'required|integer|min:1',
         ]);
 
+        // Cek stok dulu
+        if ($product->stock < $request->quantity) {
+            return redirect()->back()->withErrors(['quantity' => 'Stok tidak cukup!']);
+        }
+
+        // Hitung total
         $total = $product->price * $request->quantity;
 
+        // Simpan pesanan
         Order::create([
             'user_id'     => Auth::id(),
             'product_id'  => $product->id,
@@ -33,10 +46,15 @@ class UserController extends Controller
             'address'     => $request->address,
             'quantity'    => $request->quantity,
             'total_price' => $total,
+            'status'      => 'Pending',
         ]);
+
+        // Kurangi stok
+        $product->decrement('stock', $request->quantity);
 
         return redirect()->route('orders.my')->with('success', 'Pemesanan berhasil! ✨');
     }
+
 
 
     // Halaman sukses
@@ -45,9 +63,11 @@ class UserController extends Controller
     {
         $orders = Order::with('product')
             ->where('user_id', Auth::id())
+            ->where('status', '!=', 'Success')
             ->latest()
             ->get();
 
         return view('user.order.myorder', compact('orders')); // orders ya, bukan order
     }
+
 }

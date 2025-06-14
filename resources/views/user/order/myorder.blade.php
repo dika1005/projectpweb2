@@ -17,6 +17,18 @@
                         <p><strong>No HP:</strong> {{ $order->phone }}</p>
                         <p><strong>Alamat:</strong> {{ $order->address }}</p>
                         <p><strong>Total:</strong> Rp {{ number_format($order->total_price, 0, ',', '.') }}</p>
+                        <td>
+                            @if ($order->status === 'Pending')
+                                <span class="text-yellow-500 font-semibold">⏳ Pending</span>
+                            @elseif ($order->status === 'Process')
+                                <span class="text-blue-500 font-semibold">🔄 Proses</span>
+                            @elseif ($order->status === 'Success')
+                                <span class="text-green-600 font-semibold">✅ Sukses</span>
+                            @else
+                                <span class="text-gray-500">Unknown</span>
+                            @endif
+                        </td>
+
                         <p class="text-sm text-gray-500">Dipesan pada {{ $order->created_at->format('d M Y H:i') }}</p>
                     </div>
                 @empty

@@ -29,6 +29,9 @@ Route::get('/auth/google/callback', [GoogleController::class, 'callback'])->name
 Route::middleware(['auth', IsAdmin::class])->group(function () {
     Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
 
+    Route::get('/admin/orders/history', [AdminController::class, 'historyOrders'])->name('admin.orders.history');
+
+
     Route::prefix('admin/products')->name('admin.product.')->group(function () {
         Route::get('/', [AdminController::class, 'productIndex'])->name('index');
         Route::get('/create', [AdminController::class, 'productCreate'])->name('create');
@@ -40,12 +43,19 @@ Route::middleware(['auth', IsAdmin::class])->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
+    // Halaman daftar produk
+    Route::get('/produk', [UserController::class, 'showProducts'])->name('home.products');
+
+    // Form & proses pemesanan
     Route::get('/pesan/{product}', [UserController::class, 'orderForm'])->name('orders.create');
     Route::post('/pesan/{product}', [UserController::class, 'storeOrder'])->name('orders.store');
 
-    // Ini menggantikan /pesan/sukses
+    // Lihat pesanan user
     Route::get('/pesanan-saya', [UserController::class, 'myOrders'])->name('orders.my');
+
+    Route::get('/orders/history', [UserController::class, 'historyOrders'])->name('orders.history');
 });
+
 
 
 

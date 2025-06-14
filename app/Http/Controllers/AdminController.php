@@ -6,6 +6,8 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use App\Models\Order;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
@@ -112,5 +114,16 @@ class AdminController extends Controller
         $product->delete();
 
         return back()->with('success', 'Produk berhasil dihapus!');
+    }
+
+    public function historyOrders()
+    {
+        $orders = Order::with('product')
+            ->where('user_id', Auth::id())
+            ->where('status', 'Success')
+            ->latest()
+            ->get();
+
+        return view('admin.order.history', compact('orders'));
     }
 }

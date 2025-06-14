@@ -14,16 +14,6 @@
 
     <nav class="flex-grow p-4 space-y-2">
 
-        <a href="{{ route('home.products') }}"
-            class="flex items-center px-4 py-2 rounded-md transition duration-200 {{ request()->routeIs('home.products') ? 'bg-gray-700' : 'hover:bg-gray-700' }}">
-            <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0l-8 5-8-5" />
-            </svg>
-            <span>Belanja Produk</span>
-        </a>
-
         <a href="{{ route('dashboard') }}"
             class="flex items-center px-4 py-2 rounded-md transition duration-200 {{ request()->routeIs('admin.dashboard') ? 'bg-gray-700' : 'hover:bg-gray-700' }}">
             <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -35,22 +25,31 @@
             <span>Dashboard</span>
         </a>
 
-        <a href="{{ route('orders.my') }}"
-            class="flex items-center px-4 py-2 rounded-md transition duration-200 {{ request()->routeIs('orders.my') ? 'bg-gray-700' : 'hover:bg-gray-700' }}">
+        <!-- Belanja Produk -->
+        <a href="{{ route('home.products') }}" class="flex items-center px-4 py-2 rounded-md transition duration-200 
+        {{ request()->routeIs('home.products') ? 'bg-gray-700 text-white' : 'hover:bg-gray-700 text-gray-300' }}">
             <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h18M3 17h18" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0l-8 5-8-5" />
+            </svg>
+            <span>Belanja Produk</span>
+        </a>
+
+        <!-- Pesanan Saya -->
+        <a href="{{ route('orders.my') }}" class="flex items-center px-4 py-2 rounded-md transition duration-200 
+        {{ request()->routeIs('orders.my') ? 'bg-gray-700 text-white' : 'hover:bg-gray-700 text-gray-300' }}">
+            <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 17v-2a4 4 0 014-4h3m4 4v-4a4 4 0 00-4-4H5a4 4 0 00-4 4v4" />
             </svg>
             <span>Pesanan Saya</span>
         </a>
 
-
-        <!-- === KELOLA PRODUK (DROPDOWN MENU) === -->
-        {{-- Kita gunakan Alpine.js di sini. `x-data` untuk inisialisasi state. --}}
-        {{-- `open` akan bernilai `true` jika rute saat ini adalah salah satu rute produk. --}}
         @if (Auth::user()->is_admin)
+            <!-- === KELOLA PRODUK (DROPDOWN MENU) === -->
             <div x-data="{ open: {{ request()->routeIs('admin.product.*') ? 'true' : 'false' }} }">
-                {{-- Tombol untuk membuka/menutup dropdown --}}
                 <button @click="open = !open"
                     class="w-full flex justify-between items-center px-4 py-2 rounded-md transition duration-200 hover:bg-gray-700 focus:outline-none">
                     <span class="flex items-center">
@@ -61,32 +60,25 @@
                         </svg>
                         <span>Kelola Produk</span>
                     </span>
-                    {{-- Panah yang akan berputar --}}
                     <svg :class="{'rotate-180': open}" class="w-5 h-5 transform transition-transform duration-200"
                         fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </button>
 
-
-                {{-- Sub-menu yang bisa disembunyikan. `x-show="open"` akan menampilkannya jika `open` adalah true. --}}
                 <div x-show="open" x-transition class="mt-2 ml-4 pl-4 border-l-2 border-gray-600 space-y-2">
-                    {{-- Child: Lihat Data --}}
-                    <a href="{{ route('admin.product.index') }}" class="block px-4 py-2 rounded-md text-sm transition duration-200
-                                  {{ request()->routeIs('admin.product.index') ? 'bg-gray-700' : 'hover:bg-gray-600' }}">
+                    <a href="{{ route('admin.product.index') }}"
+                        class="block px-4 py-2 rounded-md text-sm transition duration-200
+                                                      {{ request()->routeIs('admin.product.index') ? 'bg-gray-700' : 'hover:bg-gray-600' }}">
                         Lihat Data Produk
                     </a>
 
-                    {{-- Child: Tambah Data --}}
-                    <a href="{{ route('admin.product.create') }}" class="block px-4 py-2 rounded-md text-sm transition duration-200
-                                  {{ request()->routeIs('admin.product.create') ? 'bg-gray-700' : 'hover:bg-gray-600' }}">
+                    <a href="{{ route('admin.product.create') }}"
+                        class="block px-4 py-2 rounded-md text-sm transition duration-200
+                                                      {{ request()->routeIs('admin.product.create') ? 'bg-gray-700' : 'hover:bg-gray-600' }}">
                         Tambah Data Produk
                     </a>
 
-                    {{-- Info untuk Edit & Hapus --}}
-                    {{-- Edit & Hapus biasanya tidak punya link sendiri di menu, karena diakses dari halaman 'Lihat Data'.
-                    --}}
-                    {{-- Tapi jika kamu memaksa, kamu bisa tambahkan di sini (meskipun tidak umum). --}}
                     @if (request()->routeIs('admin.product.edit'))
                         <a href="#" class="block px-4 py-2 rounded-md text-sm bg-gray-700">
                             Edit Data Produk
@@ -94,8 +86,19 @@
                     @endif
                 </div>
             </div>
+
+            <a href="{{ route('admin.orders.history') }}"
+                class="flex items-center px-4 py-2 rounded-md transition duration-200 
+                                   {{ request()->routeIs('admin.orders.history') ? 'bg-gray-700 text-white' : 'hover:bg-gray-700 text-gray-300' }}">
+                <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 17v-2a4 4 0 014-4h3m4 4v-4a4 4 0 00-4-4H5a4 4 0 00-4 4v4" />
+                </svg>
+                <span>Riwayat Pemesanan</span>
+            </a>
         @endif
-        <!-- === SELESAI DROPDOWN === -->
+
     </nav>
 
     <!-- Footer Sidebar -->

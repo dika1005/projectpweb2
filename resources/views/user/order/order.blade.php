@@ -27,7 +27,7 @@
                 </div>
             </div>
 
-            <form action="{{ route('user.order.store', $product->id) }}" method="POST" class="mt-6 space-y-4">
+            <form action="{{ route('orders.store', $product->id) }}" method="POST">
                 @csrf
 
                 <div>
@@ -45,11 +45,26 @@
                 </div>
 
                 <div>
-                    <label for="quantity" class="block text-sm font-medium text-gray-700">Jumlah Dibeli</label>
-                    <input type="number" name="quantity" id="quantity" min="1" max="{{ $product->stock }}"
-                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                        required>
+                    <label class="block text-sm font-medium text-gray-700">Jumlah Dibeli</label>
+                    <div class="flex items-center space-x-2 mt-1">
+                        <button type="button" id="decreaseQty" class="px-3 py-1 bg-gray-300 rounded">−</button>
+                        <span id="quantityDisplay" class="text-lg font-medium">1</span>
+                        <button type="button" id="increaseQty" class="px-3 py-1 bg-gray-300 rounded">+</button>
+                    </div>
+                    <input type="hidden" name="quantity" id="quantity" value="1">
+                    <input type="hidden" id="product_price" value="{{ $product->price }}">
+                    <input type="hidden" id="product_stock" value="{{ $product->stock }}">
+
                 </div>
+
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Total Harga</label>
+                    <input type="text" id="total_price_display" disabled
+                        class="mt-1 block w-full border border-gray-300 bg-gray-100 rounded-md shadow-sm sm:text-sm text-gray-800">
+                </div>
+
+
 
                 <div class="pt-4">
                     <button type="submit"
@@ -60,4 +75,7 @@
             </form>
         </div>
     </div>
+    @vite('resources/js/order.js')
+
+
 </x-app-layout>
