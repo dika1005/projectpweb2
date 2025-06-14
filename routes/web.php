@@ -27,7 +27,18 @@ Route::get('/auth/google/callback', [GoogleController::class, 'callback'])->name
 
 Route::middleware(['auth', IsAdmin::class])->group(function () {
     Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
+
+    Route::prefix('admin/products')->name('admin.product.')->group(function () {
+        Route::get('/', [AdminController::class, 'productIndex'])->name('index');
+        Route::get('/create', [AdminController::class, 'productCreate'])->name('create');
+        Route::post('/', [AdminController::class, 'productStore'])->name('store');
+        Route::get('/{product}/edit', [AdminController::class, 'productEdit'])->name('edit');
+        Route::put('/{product}', [AdminController::class, 'productUpdate'])->name('update');
+        Route::delete('/{product}', [AdminController::class, 'productDestroy'])->name('destroy');
+    });
 });
+
+
 
 
 
