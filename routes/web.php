@@ -6,6 +6,7 @@ use App\Http\Controllers\auth\GoogleController;
 use App\Http\Controllers\AdminController;
 use App\Http\Middleware\AdminMiddleware;
 use App\Http\Middleware\IsAdmin;
+use App\Http\Controllers\UserController;
 
 
 Route::get('/', function () {
@@ -38,7 +39,13 @@ Route::middleware(['auth', IsAdmin::class])->group(function () {
     });
 });
 
+Route::middleware('auth')->group(function () {
+    Route::get('/pesan/{product}', [UserController::class, 'orderForm'])->name('orders.create');
+    Route::post('/pesan/{product}', [UserController::class, 'storeOrder'])->name('orders.store');
 
+    // Ini menggantikan /pesan/sukses
+    Route::get('/pesanan-saya', [UserController::class, 'myOrders'])->name('orders.my');
+});
 
 
 

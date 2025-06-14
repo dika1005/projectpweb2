@@ -27,8 +27,10 @@ class AdminController extends Controller
     public function productIndex()
     {
         $products = Product::latest()->paginate(10);
-        return view('admin.product.index', compact('products'));
+        return view('admin.product.index', compact('products')); // ⬅️ Kirim 'products' ke 'index' view
     }
+
+
 
     /**
      * Menampilkan form untuk membuat produk baru.
@@ -64,10 +66,7 @@ class AdminController extends Controller
         return redirect()->route('admin.product.index')->with('success', 'Produk berhasil ditambahkan!');
     }
 
-    /**
-     * Menampilkan form untuk mengedit produk.
-     * (Sebelumnya ada di ProductController@edit)
-     */
+
     public function productEdit(Product $product)
     {
         return view('admin.product.edit', compact('product'));
