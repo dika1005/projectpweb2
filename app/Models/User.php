@@ -21,6 +21,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'is_admin', // Tambahkan atribut is_admin
+        'email_verified_at', // Jika menggunakan verifikasi email
+        // 'remember_token', // Tidak perlu diisi, Laravel akan mengelolanya
     ];
 
     /**

@@ -11,6 +11,13 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     {{ __("You're logged in!") }}
                 </div>
+                @if (Auth::user()->is_admin)
+                    <div class="p-6 text-gray-900 dark:text-gray-100">
+                        <a href="{{ route('admin.dashboard') }}" class="text-blue-500 hover:underline">
+                            {{ __('Go to Admin Dashboard') }}
+                        </a>
+                    </div>
+                @endif
             </div>
         </div>
     </div>
