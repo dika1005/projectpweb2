@@ -70,4 +70,14 @@ class UserController extends Controller
         return view('user.order.myorder', compact('orders')); // orders ya, bukan order
     }
 
+    public function historyOrders()
+    {
+        $orders = \App\Models\Order::with('product')
+            ->where('user_id', Auth::id())
+            ->where('status', '=', 'Success')
+            ->orderByDesc('created_at')
+            ->get();
+
+        return view('user.order.history', compact('orders'));
+    }
 }
