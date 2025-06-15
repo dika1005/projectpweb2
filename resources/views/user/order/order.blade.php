@@ -5,6 +5,7 @@
         </h2>
     </x-slot>
 
+    
     <div class="py-12">
         <div class="max-w-3xl mx-auto bg-white shadow-md rounded-lg p-8">
             <div class="flex flex-col md:flex-row gap-6">

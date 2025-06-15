@@ -1,4 +1,3 @@
-{{-- resources/views/user/product/index.blade.php --}}
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -14,6 +13,17 @@
                     {{ session('success') }}
                 </div>
             @endif
+
+            {{-- FORM PENCARIAN PRODUK --}}
+            <form action="{{ route('home.products') }}" method="GET" class="mb-6 max-w-md flex">
+                <input type="text" name="search" placeholder="Cari produk berdasarkan nama..."
+                    value="{{ request('search') }}"
+                    class="flex-grow border border-gray-300 rounded-l px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                <button type="submit" class="bg-indigo-600 text-white px-4 rounded-r hover:bg-indigo-700 transition">
+                    Cari
+                </button>
+            </form>
+
 
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 @forelse ($products as $product)
@@ -50,7 +60,7 @@
             </div>
 
             <div class="mt-6">
-                {{ $products->links() }}
+                {{ $products->withQueryString()->links() }}
             </div>
         </div>
 

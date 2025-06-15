@@ -145,11 +145,13 @@ class AdminController extends Controller
     {
         $request->validate([
             'status' => 'required|in:Pending,Process,Success',
+            'estimated_completion' => 'nullable|date',
         ]);
 
         $order->status = $request->status;
+        $order->estimated_completion = $request->estimated_completion;
         $order->save();
 
-        return back()->with('success', 'Status pesanan berhasil diperbarui!');
+        return back()->with('success', 'Status dan estimasi pesanan berhasil diperbarui!');
     }
 }

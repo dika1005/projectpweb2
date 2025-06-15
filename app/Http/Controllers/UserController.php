@@ -10,11 +10,19 @@ use Illuminate\Support\Facades\Auth;
 class UserController extends Controller
 {
 
-    public function showProducts()
+    public function showProducts(Request $request)
     {
-        $products = Product::latest()->paginate(12);
+        $query = Product::query();
+
+        if ($request->has('search') && $request->search != '') {
+            $query->where('name', 'like', '%' . $request->search . '%');
+        }
+
+        $products = $query->latest()->paginate(12)->withQueryString();
+
         return view('user.order.index', compact('products'));
     }
+
     // Form pemesanan
     public function orderForm(Product $product)
     {
@@ -79,5 +87,23 @@ class UserController extends Controller
             ->get();
 
         return view('user.order.history', compact('orders'));
+    }
+
+    public function searchProducts(Request $request)
+    {
+        $searchTerm = $request->input('search');
+
+        // Kalau search kosong, langsung tampilkan semua produk terbaru dengan pagination 12
+        if (!$searchTerm) {
+            $products = Product::latest()->paginate(12);
+        } else {
+            // Cari produk berdasarkan nama, case insensitive
+            $products = Product::where('name', 'LIKE', '%' . $searchTerm . '%')
+                ->latest()
+                ->paginate(12);
+        }
+
+        // Return view sama variable products dan juga searchTerm biar bisa dipake di view
+        return view('user.order.index', compact('products', 'searchTerm'));
     }
 }

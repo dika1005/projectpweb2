@@ -63,6 +63,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/pesanan-saya', [UserController::class, 'myOrders'])->name('orders.my');
 
     Route::get('/orders/history', [UserController::class, 'historyOrders'])->name('orders.history');
+
+    Route::get('/products/search', [UserController::class, 'searchProducts'])->name('products.search');
 });
 
 

@@ -19,6 +19,14 @@
                         <p><strong>Alamat:</strong> {{ $order->address }}</p>
                         <p><strong>Total:</strong> Rp {{ number_format($order->total_price, 0, ',', '.') }}</p>
 
+                        <p><strong>Estimasi Selesai:</strong>
+                            @if ($order->estimated_completion)
+                                {{ \Carbon\Carbon::parse($order->estimated_completion)->format('d M Y') }}
+                            @else
+                                <span class="text-gray-400 italic">Belum ada estimasi</span>
+                            @endif
+                        </p>
+
                         <p>
                             @if ($order->status === 'Pending')
                                 <span class="text-yellow-500 font-semibold">⏳ Pending</span>
@@ -47,11 +55,20 @@
 
                                 <h2 class="text-xl font-bold mb-4">{{ $order->product->name }}</h2>
                                 <img src="{{ asset('storage/' . $order->product->image) }}"
-                                    class="w-full h-60 object-cover rounded mb-4" alt="Produk">
+                                    class="w-full h-70 object-cover rounded mb-4" alt="Produk">
                                 <p><strong>Jumlah:</strong> {{ $order->quantity }}</p>
                                 <p><strong>No HP:</strong> {{ $order->phone }}</p>
                                 <p><strong>Alamat:</strong> {{ $order->address }}</p>
                                 <p><strong>Total:</strong> Rp {{ number_format($order->total_price, 0, ',', '.') }}</p>
+
+                                <p><strong>Estimasi Selesai:</strong>
+                                    @if ($order->estimated_completion)
+                                        {{ \Carbon\Carbon::parse($order->estimated_completion)->format('d M Y') }}
+                                    @else
+                                        <span class="text-gray-400 italic">Belum ada estimasi</span>
+                                    @endif
+                                </p>
+
                                 <p>
                                     <strong>Status:</strong>
                                     @if ($order->status === 'Pending')
@@ -65,10 +82,12 @@
                                     @endif
                                 </p>
                                 <p class="text-sm text-gray-500 mt-2">Dipesan pada
-                                    {{ $order->created_at->format('d M Y H:i') }}</p>
+                                    {{ $order->created_at->format('d M Y H:i') }}
+                                </p>
                             </div>
                         </div>
                     </div>
+
                 @empty
                     <p class="text-gray-600">Kamu belum memesan apa-apa... Beli dulu lah~!</p>
                 @endforelse
