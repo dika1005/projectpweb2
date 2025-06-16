@@ -116,25 +116,54 @@ class AdminController extends Controller
         return back()->with('success', 'Produk berhasil dihapus!');
     }
 
-    public function historyOrders()
+    public function historyAllOrders(Request $request)
     {
-        $orders = Order::with(['product', 'user']) // <- tambahkan 'user' juga ya kalau mau tampilkan nama
-            ->where('status', 'Success') // ⬅️ tampilkan semua pesanan yang sudah sukses
-            ->latest()
-            ->get();
+        // Query dasar: ambil semua pesanan yang statusnya 'Success'
+        $query = Order::with(['user', 'product'])
+            ->where('status', 'Success');
+
+        // Kalau ada input pencarian
+        if ($request->filled('search')) {
+            $searchTerm = $request->search;
+
+            // Cari berdasarkan nama user ATAU nama produk
+            $query->where(function ($q) use ($searchTerm) {
+                $q->whereHas('user', function ($subQuery) use ($searchTerm) {
+                    $subQuery->where('name', 'like', "%{$searchTerm}%");
+                })->orWhereHas('product', function ($subQuery) use ($searchTerm) {
+                    $subQuery->where('name', 'like', "%{$searchTerm}%");
+                });
+            });
+        }
+
+        // Eksekusi query dengan urutan terbaru dan pagination
+        $orders = $query->latest()->paginate(10)->withQueryString();
 
         return view('admin.order.history', compact('orders'));
     }
 
 
+    public function historyOrders()
+    {
+        $perPage = 10;
+        $orders = \App\Models\Order::with('product')
+            ->where('user_id', Auth::id())
+            ->where('status', '=', 'Success')
+            ->orderByDesc('created_at')
+            ->paginate($perPage);
+
+
+        return view('user.order.history', compact('orders'));
+    }
 
     // Menampilkan semua pesanan
     public function manageOrders()
     {
+        $perPage = 10;
         $orders = Order::with('user', 'product')
             ->where('status', '!=', 'Success') // ⬅️ hanya tampilkan yang belum success
             ->latest()
-            ->get();
+            ->paginate($perPage);
 
         return view('admin.order.manage', compact('orders'));
     }

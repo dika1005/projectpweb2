@@ -44,10 +44,7 @@
                                     <p class="mt-1 text-indigo-200">Anda memiliki akses ke fitur administratif.</p>
                                 </div>
                             </div>
-                            <a href="{{ route('admin.dashboard') }}"
-                                class="inline-block bg-white text-indigo-600 font-bold py-2.5 px-6 rounded-lg hover:bg-indigo-100 transition-colors shrink-0">
-                                {{ __('Buka Dashboard Admin') }}
-                            </a>
+                           
                         </div>
                     </div>
                 @endif
@@ -55,7 +52,7 @@
                 <!-- Action Cards -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <!-- Card 1: Profil -->
-                    <a href="{{-- route('profile.edit') --}}"
+                    <a href="{{ route('profile.edit') }}"
                         class="block group bg-white/10 dark:bg-gray-800/50 backdrop-blur-xl p-8 rounded-2xl shadow-lg hover:shadow-indigo-500/20 hover:-translate-y-1 transition-all duration-300 border border-white/20">
                         <div
                             class="flex items-center justify-center h-16 w-16 rounded-full bg-indigo-500/20 mb-6 group-hover:bg-indigo-500/40 transition-colors">

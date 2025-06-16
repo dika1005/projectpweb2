@@ -197,16 +197,16 @@
                                     <div class="group relative">
                                         <div
                                             class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200">
-                                            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ab?q=80&w=800"
-                                                alt="Red running shoe"
+                                            <img src="https://i.pinimg.com/736x/a7/d6/11/a7d611c643d03b0574d7ef88abd6c4ce.jpg"
+                                                alt="all star shoe"
                                                 class="h-full w-full object-cover object-center group-hover:opacity-75">
                                         </div>
                                         <div class="mt-6">
                                             <h3 class="mt-1 font-semibold text-gray-900 dark:text-white">
                                                 <a
-                                                    href="@auth{{ url('/products/aerorun-pro') }}@else{{ route('login') }}@endauth">
+                                                    href="@auth{{ url('/products/all-star') }}@else{{ route('login') }}@endauth">
                                                     <span class="absolute inset-0"></span>
-                                                    AeroRun Pro
+                                                    Converse All Star
                                                 </a>
                                             </h3>
                                             <p class="mt-1 text-gray-500 dark:text-gray-400">Rp 1.299.000</p>

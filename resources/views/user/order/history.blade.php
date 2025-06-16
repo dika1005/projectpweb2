@@ -110,12 +110,8 @@
                             tercatat di sini.</p>
                     </div>
 
-            @if ($orders->hasPages())
-                <div class="mt-10">
-                    {{ $orders->links() }}
-                </div>
-            @endif
                 @endforelse
+
             </div>
 
         </div>

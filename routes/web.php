@@ -29,7 +29,7 @@ Route::get('/auth/google/callback', [GoogleController::class, 'callback'])->name
 Route::middleware(['auth', IsAdmin::class])->group(function () {
     Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
 
-    Route::get('/admin/orders/history', [AdminController::class, 'historyOrders'])->name('admin.orders.history');
+    Route::get('/admin/orders/history', [AdminController::class, 'historyAllOrders'])->name('admin.orders.history');
 
 
     // Kelola semua pesanan oleh admin
