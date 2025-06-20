@@ -1,3 +1,7 @@
+@php
+    $orderRoutePrefix = route('orders.create', ['product' => '__ID__']);
+@endphp
+
 <x-app-layout>
     {{-- Kita hapus header default untuk kontrol penuh atas layout --}}
     {{-- <x-slot name="header">...</x-slot> --}}
@@ -192,7 +196,7 @@
 
                             <div class="mt-auto pt-6">
                                 {{-- Tombol di modal - LINKNYA DIBUAT DINAMIS TAPI TUJUANNYA SAMA --}}
-                                <a href="{{ route('orders.create', $product->id) }}"
+                                <a :href="'{{ $orderRoutePrefix }}'.replace('__ID__', selectedProduct.id)"
                                     class="w-full bg-indigo-600 text-white py-3 px-8 rounded-lg hover:bg-indigo-700 transition-colors text-base font-semibold flex items-center justify-center gap-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
                                         fill="currentColor">
@@ -201,6 +205,8 @@
                                     </svg>
                                     Pesan Sekarang
                                 </a>
+
+
                             </div>
                         </div>
                     </div>
