@@ -174,6 +174,8 @@
                 </div>
             </div>
 
+            
+
             <!-- Featured products section -->
             <section aria-labelledby="trending-heading" class="bg-white dark:bg-gray-900">
                 <div class="py-16 sm:py-24 lg:mx-auto lg:max-w-7xl lg:px-8 lg:py-32">
@@ -198,13 +200,13 @@
                                         </div>
                                         <div class="mt-6">
                                             <h3 class="mt-1 font-semibold text-gray-900 dark:text-white">
-                                                <a
-                                                    href="@auth{{ url('/products/all-star') }}@else{{ route('login') }}@endauth">
+                                                <a href="{{ route('login', ['redirect' => route('home.products')]) }}">
                                                     <span class="absolute inset-0"></span>
                                                     Converse All Star
                                                 </a>
+
                                             </h3>
-                                           
+
                                         </div>
                                     </div>
                                 </li>
@@ -219,13 +221,12 @@
                                         </div>
                                         <div class="mt-6">
                                             <h3 class="mt-1 font-semibold text-gray-900 dark:text-white">
-                                                <a
-                                                    href="@auth{{ url('/products/colorsplash-vibe') }}@else{{ route('login') }}@endauth">
+                                                <a href="{{ route('login', ['redirect' => route('home.products')]) }}">
                                                     <span class="absolute inset-0"></span>
                                                     ColorSplash Vibe
                                                 </a>
                                             </h3>
-                                    
+
                                         </div>
                                     </div>
                                 </li>
@@ -240,13 +241,12 @@
                                         </div>
                                         <div class="mt-6">
                                             <h3 class="mt-1 font-semibold text-gray-900 dark:text-white">
-                                                <a
-                                                    href="@auth{{ url('/products/urban-explorer') }}@else{{ route('login') }}@endauth">
+                                                <a href="{{ route('login', ['redirect' => route('home.products')]) }}">
                                                     <span class="absolute inset-0"></span>
                                                     Urban Explorer
                                                 </a>
                                             </h3>
-                                            
+
                                         </div>
                                     </div>
                                 </li>
@@ -261,13 +261,12 @@
                                         </div>
                                         <div class="mt-6">
                                             <h3 class="mt-1 font-semibold text-gray-900 dark:text-white">
-                                                <a
-                                                    href="@auth{{ url('/products/classic-check') }}@else{{ route('login') }}@endauth">
+                                                <a href="{{ route('login', ['redirect' => route('home.products')]) }}">
                                                     <span class="absolute inset-0"></span>
                                                     Classic Check
                                                 </a>
                                             </h3>
-                                           
+
                                         </div>
                                     </div>
                                 </li>

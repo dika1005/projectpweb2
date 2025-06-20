@@ -12,16 +12,18 @@ class UserController extends Controller
 
     public function showProducts(Request $request)
     {
+        $perPage = 5;
         $query = Product::query();
 
         if ($request->has('search') && $request->search != '') {
             $query->where('name', 'like', '%' . $request->search . '%');
         }
 
-        $products = $query->latest()->paginate(12)->withQueryString();
+        $products = $query->latest()->paginate($perPage)->withQueryString();
 
         return view('user.order.index', compact('products'));
     }
+
 
     // Form pemesanan
     public function orderForm(Product $product)
@@ -81,7 +83,7 @@ class UserController extends Controller
 
     public function historyOrders()
     {
-         $perPage = 10;
+        $perPage = 10;
         $orders = \App\Models\Order::with('product')
             ->where('user_id', Auth::id())
             ->where('status', '=', 'Success')
