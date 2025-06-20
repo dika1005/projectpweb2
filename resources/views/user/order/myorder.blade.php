@@ -119,7 +119,7 @@
                         <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Semua pesanan yang sedang diproses akan
                             muncul di sini.</p>
                         <div class="mt-6">
-                            <a href="/"
+                            <a href="{{ route('home.products') }}"
                                 class="inline-flex items-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700">
                                 Mulai Belanja Sekarang
                             </a>
@@ -201,6 +201,11 @@
                         </div>
                     </div>
                 </template>
+                @if ($orders->hasPages())
+                    <div class="bg-white dark:bg-gray-800 px-4 py-3 border-t border-gray-200 dark:border-gray-700 sm:px-6">
+                        {{ $orders->links() }}
+                    </div>
+                @endif
             </div>
         </div>
     </div>

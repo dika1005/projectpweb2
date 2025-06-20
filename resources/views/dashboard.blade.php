@@ -44,7 +44,7 @@
                                     <p class="mt-1 text-indigo-200">Anda memiliki akses ke fitur administratif.</p>
                                 </div>
                             </div>
-                           
+
                         </div>
                     </div>
                 @endif
@@ -88,22 +88,24 @@
                     </a>
 
                     <!-- Card 3: Bantuan -->
-                    <a href="#"
-                        class="block group bg-white/10 dark:bg-gray-800/50 backdrop-blur-xl p-8 rounded-2xl shadow-lg hover:shadow-blue-500/20 hover:-translate-y-1 transition-all duration-300 border border-white/20">
+                    <a href="https://wa.me/6281229266853?text=Halo%20admin%2C%20saya%20butuh%20bantuan%20nih"
+                        target="_blank" rel="noopener noreferrer"
+                        class="block group bg-white/10 dark:bg-gray-800/50 backdrop-blur-xl p-8 rounded-2xl shadow-lg hover:shadow-green-500/20 hover:-translate-y-1 transition-all duration-300 border border-white/20">
                         <div
-                            class="flex items-center justify-center h-16 w-16 rounded-full bg-blue-500/20 mb-6 group-hover:bg-blue-500/40 transition-colors">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-200" fill="none"
+                            class="flex items-center justify-center h-16 w-16 rounded-full bg-green-500/20 mb-6 group-hover:bg-green-500/40 transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-200" fill="none"
                                 viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                         </div>
-                        <h3 class="text-xl font-bold text-white">Pusat Bantuan</h3>
-                        <p class="mt-2 text-gray-300">Butuh bantuan? Kunjungi FAQ atau hubungi kami.</p>
-                        <div class="mt-6 font-semibold text-blue-300 group-hover:text-white transition-colors">
-                            Dapatkan Bantuan →
+                        <h3 class="text-xl font-bold text-white">Butuh Bantuan?</h3>
+                        <p class="mt-2 text-gray-300">Langsung hubungi admin kami via WhatsApp.</p>
+                        <div class="mt-6 font-semibold text-green-300 group-hover:text-white transition-colors">
+                            Chat Sekarang →
                         </div>
                     </a>
+
                 </div>
 
             </div>

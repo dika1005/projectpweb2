@@ -151,8 +151,7 @@
                 <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
                     <div class="relative shadow-xl sm:overflow-hidden sm:rounded-2xl">
                         <div class="absolute inset-0">
-                            <img class="h-full w-full object-cover"
-                                src="https://images.unsplash.com/photo-1511556532299-8f662fc26c06?q=80&w=2070&auto=format&fit=crop"
+                            <img class="h-full w-full object-cover" src="{{ asset('image/sepatuhh.avif') }}"
                                 alt="Sepatu-sepatu keren">
                             <div class="absolute inset-0 bg-gradient-to-r from-gray-900/75 to-gray-900/25"></div>
                         </div>
@@ -181,11 +180,7 @@
                     <div class="flex items-center justify-between px-4 sm:px-6 lg:px-0">
                         <h2 id="trending-heading"
                             class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Produk Unggulan</h2>
-                        <a href="@auth{{ url('/shop') }}@else{{ route('login') }}@endauth"
-                            class="hidden text-sm font-semibold text-indigo-600 hover:text-indigo-500 sm:block">
-                            Lihat semua
-                            <span aria-hidden="true"> →</span>
-                        </a>
+
                     </div>
 
                     <div class="relative mt-8">
@@ -197,9 +192,9 @@
                                     <div class="group relative">
                                         <div
                                             class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200">
-                                            <img src="https://i.pinimg.com/736x/a7/d6/11/a7d611c643d03b0574d7ef88abd6c4ce.jpg"
-                                                alt="all star shoe"
+                                            <img src="{{ asset('image/sepatu1.jpg') }}" alt="all star shoe"
                                                 class="h-full w-full object-cover object-center group-hover:opacity-75">
+
                                         </div>
                                         <div class="mt-6">
                                             <h3 class="mt-1 font-semibold text-gray-900 dark:text-white">
@@ -209,7 +204,7 @@
                                                     Converse All Star
                                                 </a>
                                             </h3>
-                                            <p class="mt-1 text-gray-500 dark:text-gray-400">Rp 1.299.000</p>
+                                           
                                         </div>
                                     </div>
                                 </li>
@@ -218,9 +213,9 @@
                                     <div class="group relative">
                                         <div
                                             class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200">
-                                            <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?q=80&w=800"
-                                                alt="Colorful casual sneaker"
+                                            <img src="{{ asset('image/sepatu2.jpeg') }}" alt="Colorful casual sneaker"
                                                 class="h-full w-full object-cover object-center group-hover:opacity-75">
+
                                         </div>
                                         <div class="mt-6">
                                             <h3 class="mt-1 font-semibold text-gray-900 dark:text-white">
@@ -230,7 +225,7 @@
                                                     ColorSplash Vibe
                                                 </a>
                                             </h3>
-                                            <p class="mt-1 text-gray-500 dark:text-gray-400">Rp 899.000</p>
+                                    
                                         </div>
                                     </div>
                                 </li>
@@ -239,9 +234,9 @@
                                     <div class="group relative">
                                         <div
                                             class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200">
-                                            <img src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?q=80&w=800"
-                                                alt="Brown leather boots"
+                                            <img src="{{ asset('image/sepatu3.jpeg') }}" alt="Brown leather boots"
                                                 class="h-full w-full object-cover object-center group-hover:opacity-75">
+
                                         </div>
                                         <div class="mt-6">
                                             <h3 class="mt-1 font-semibold text-gray-900 dark:text-white">
@@ -251,7 +246,7 @@
                                                     Urban Explorer
                                                 </a>
                                             </h3>
-                                            <p class="mt-1 text-gray-500 dark:text-gray-400">Rp 1.750.000</p>
+                                            
                                         </div>
                                     </div>
                                 </li>
@@ -260,9 +255,9 @@
                                     <div class="group relative">
                                         <div
                                             class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200">
-                                            <img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?q=80&w=800"
-                                                alt="Classic checkerboard shoe"
+                                            <img src="{{ asset('image/sepatu4.jpeg') }}" alt="Classic checkerboard shoe"
                                                 class="h-full w-full object-cover object-center group-hover:opacity-75">
+
                                         </div>
                                         <div class="mt-6">
                                             <h3 class="mt-1 font-semibold text-gray-900 dark:text-white">
@@ -272,7 +267,7 @@
                                                     Classic Check
                                                 </a>
                                             </h3>
-                                            <p class="mt-1 text-gray-500 dark:text-gray-400">Rp 950.000</p>
+                                           
                                         </div>
                                     </div>
                                 </li>
@@ -282,65 +277,80 @@
                 </div>
             </section>
 
-            <!-- Category section -->
-            <section aria-labelledby="collections-heading" class="bg-gray-100 dark:bg-gray-800">
-                <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                    <div class="mx-auto max-w-2xl py-16 sm:py-24 lg:max-w-none lg:py-32">
-                        <h2 id="collections-heading" class="text-2xl font-bold text-gray-900 dark:text-white">Jelajahi
-                            Berdasarkan Kategori</h2>
+            <section class="bg-gray-100 dark:bg-gray-800 py-16 sm:py-24 rounded-2xl">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center">
+                        <h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">Apa Kata
+                            Mereka?</h2>
+                        <p class="mt-4 text-lg leading-6 text-gray-600 dark:text-gray-400">
+                            Testimoni pelanggan kami yang puas dengan kualitas dan pelayanan.
+                        </p>
+                    </div>
 
-                        <div class="mt-6 space-y-12 lg:grid lg:grid-cols-3 lg:gap-x-6 lg:space-y-0">
-                            <div class="group relative">
-                                <div
-                                    class="relative h-80 w-full overflow-hidden rounded-lg bg-white sm:aspect-h-1 sm:aspect-w-2 lg:aspect-h-1 lg:aspect-w-1 group-hover:opacity-75 sm:h-64">
-                                    <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?q=80&w=800"
-                                        alt="Man wearing sneakers" class="h-full w-full object-cover object-center">
-                                </div>
-                                <h3 class="mt-6 text-base font-semibold text-gray-900 dark:text-white">
-                                    <a href="@auth{{ url('/category/pria') }}@else{{ route('login') }}@endauth">
-                                        <span class="absolute inset-0"></span>
-                                        Koleksi Pria
-                                    </a>
-                                </h3>
-                                <p class="text-sm text-gray-500 dark:text-gray-400">Gaya dan performa untuk setiap
-                                    kesempatan.</p>
-                            </div>
-                            <div class="group relative">
-                                <div
-                                    class="relative h-80 w-full overflow-hidden rounded-lg bg-white sm:aspect-h-1 sm:aspect-w-2 lg:aspect-h-1 lg:aspect-w-1 group-hover:opacity-75 sm:h-64">
-                                    <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=800"
-                                        alt="Woman wearing stylish heels"
-                                        class="h-full w-full object-cover object-center">
-                                </div>
-                                <h3 class="mt-6 text-base font-semibold text-gray-900 dark:text-white">
-                                    <a href="@auth{{ url('/category/wanita') }}@else{{ route('login') }}@endauth">
-                                        <span class="absolute inset-0"></span>
-                                        Koleksi Wanita
-                                    </a>
-                                </h3>
-                                <p class="text-sm text-gray-500 dark:text-gray-400">Elegan, nyaman, dan selalu on-trend.
-                                </p>
-                            </div>
-                            <div class="group relative">
-                                <div
-                                    class="relative h-80 w-full overflow-hidden rounded-lg bg-white sm:aspect-h-1 sm:aspect-w-2 lg:aspect-h-1 lg:aspect-w-1 group-hover:opacity-75 sm:h-64">
-                                    <img src="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?q=80&w=800"
-                                        alt="A pair of new arrival shoes"
-                                        class="h-full w-full object-cover object-center">
-                                </div>
-                                <h3 class="mt-6 text-base font-semibold text-gray-900 dark:text-white">
-                                    <a href="@auth{{ url('/new-arrivals') }}@else{{ route('login') }}@endauth">
-                                        <span class="absolute inset-0"></span>
-                                        Pendatang Baru
-                                    </a>
-                                </h3>
-                                <p class="text-sm text-gray-500 dark:text-gray-400">Lihat gaya terbaru yang baru saja
-                                    tiba.</p>
-                            </div>
+                    <div class="mt-10 grid grid-cols-1 gap-y-12 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-8">
+                        <!-- Testimoni 1 -->
+                        <div class="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md">
+                            <p class="text-gray-700 dark:text-gray-300">“Sepatunya nyaman banget dipakai seharian. Suka
+                                banget sama desainnya!”</p>
+                            <div class="mt-4 text-sm font-medium text-gray-900 dark:text-white">- Sinta, Jakarta</div>
+                        </div>
+
+                        <!-- Testimoni 2 -->
+                        <div class="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md">
+                            <p class="text-gray-700 dark:text-gray-300">“Pelayanannya cepat dan ramah. Barang sampai
+                                dengan selamat!”</p>
+                            <div class="mt-4 text-sm font-medium text-gray-900 dark:text-white">- Andi, Bandung</div>
+                        </div>
+
+                        <!-- Testimoni 3 -->
+                        <div class="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md">
+                            <p class="text-gray-700 dark:text-gray-300">“Pilihan produknya banyak dan berkualitas
+                                tinggi. Recommended banget!”</p>
+                            <div class="mt-4 text-sm font-medium text-gray-900 dark:text-white">- Maya, Surabaya</div>
                         </div>
                     </div>
                 </div>
             </section>
+
+            <!-- FAQ Section -->
+            <section class="bg-gray-300 dark:bg-gray-800 py-16 sm:py-24 rounded-2xl">
+                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white text-center">Pertanyaan Umum</h2>
+                    <div class="mt-10 space-y-6">
+                        <details class="group bg-white dark:bg-gray-900 p-4 rounded-md shadow-sm">
+                            <summary
+                                class="flex justify-between items-center font-medium cursor-pointer text-gray-700 dark:text-white">
+                                Apakah saya bisa menukar produk jika ukurannya tidak pas?
+                                <span class="ml-4 group-open:rotate-180 transition-transform">⌄</span>
+                            </summary>
+                            <p class="mt-4 text-gray-600 dark:text-gray-300">Tentu! Kami menerima penukaran barang dalam
+                                waktu 7 hari setelah barang diterima.</p>
+                        </details>
+
+                        <details class="group bg-white dark:bg-gray-900 p-4 rounded-md shadow-sm">
+                            <summary
+                                class="flex justify-between items-center font-medium cursor-pointer text-gray-700 dark:text-white">
+                                Berapa lama pengiriman biasanya?
+                                <span class="ml-4 group-open:rotate-180 transition-transform">⌄</span>
+                            </summary>
+                            <p class="mt-2 text-gray-600 dark:text-gray-300">Pengiriman biasanya memakan waktu 2-5 hari
+                                kerja, tergantung lokasi Anda.</p>
+                        </details>
+
+                        <details class="group bg-white dark:bg-gray-900 p-4 rounded-md shadow-sm">
+                            <summary
+                                class="flex justify-between items-center font-medium cursor-pointer text-gray-700 dark:text-white">
+                                Apakah bisa COD?
+                                <span class="ml-4 group-open:rotate-180 transition-transform">⌄</span>
+                            </summary>
+                            <p class="mt-2 text-gray-600 dark:text-gray-300">Saat ini kami belum mendukung pembayaran
+                                COD. Kami menerima transfer bank dan e-wallet.</p>
+                        </details>
+                    </div>
+                </div>
+            </section>
+
+
 
             <!-- Newsletter section -->
             <div class="bg-white dark:bg-gray-900 py-16 sm:py-24">
@@ -426,7 +436,8 @@
                     </div>
                 </div>
                 <div class="mt-16 border-t border-gray-900/10 dark:border-gray-700 pt-8 sm:mt-20 lg:mt-24">
-                    <p class="text-xs leading-5 text-gray-500 dark:text-gray-400">© {{ date('Y') }} Toko Sepatu MassDik, Inc. All
+                    <p class="text-xs leading-5 text-gray-500 dark:text-gray-400">© {{ date('Y') }} Toko Sepatu MassDik,
+                        Inc. All
                         rights reserved.</p>
                 </div>
             </div>

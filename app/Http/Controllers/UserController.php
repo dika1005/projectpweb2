@@ -69,22 +69,24 @@ class UserController extends Controller
 
     public function myOrders()
     {
+        $perPage = 5;
         $orders = Order::with('product')
             ->where('user_id', Auth::id())
             ->where('status', '!=', 'Success')
             ->latest()
-            ->get();
+            ->paginate($perPage);
 
         return view('user.order.myorder', compact('orders')); // orders ya, bukan order
     }
 
     public function historyOrders()
     {
+         $perPage = 10;
         $orders = \App\Models\Order::with('product')
             ->where('user_id', Auth::id())
             ->where('status', '=', 'Success')
             ->orderByDesc('created_at')
-            ->get();
+            ->paginate($perPage);
 
         return view('user.order.history', compact('orders'));
     }
