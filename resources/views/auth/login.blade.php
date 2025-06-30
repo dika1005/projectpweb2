@@ -8,7 +8,7 @@
 
         <div class="mb-4 text-center">
             <h1 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-7">
-                {{ __('Log in ke') }} <span class="text-purple-600">Toko Sepatu MassDik</span>
+                {{ __('Log in ke') }} <span class="text-purple-600">Toko Sepatu Mang Kus</span>
             </h1>
         </div>
 

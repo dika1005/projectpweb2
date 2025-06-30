@@ -12,7 +12,7 @@ class UserController extends Controller
 
     public function showProducts(Request $request)
     {
-        $perPage = 5;
+        $perPage = 10;
         $query = Product::query();
 
         if ($request->has('search') && $request->search != '') {

@@ -22,7 +22,8 @@
         <!-- LOGO HEADER -->
         <div>
             <a href="/">
-                <x-application-logo class="w-20 h-20" />
+                <img src="{{ asset('image/MASSDIK-_1_.svg') }}" alt="Logo Toko Sepatu Mang Kus"
+                    class="w-24 h-24 sm:w-32 sm:h-32 rounded-full shadow-lg">
 
             </a>
         </div>

@@ -60,7 +60,7 @@ function showInvoice(orderData) {
                         ).padStart(6, "0")}</p>
                     </div>
                     <div class="text-right">
-                        <h2 class="text-2xl font-bold text-gray-800">Toko Sepatu MassDik</h2>
+                        <h2 class="text-2xl font-bold text-gray-800">Toko Sepatu Mang Kus</h2>
                         <p class="text-gray-500">Jl. H. Ebo Bahar Muncangela<br>JKuningan, Jawa Barat</p>
                     </div>
                 </div>
@@ -135,7 +135,7 @@ function showInvoice(orderData) {
 
                 <!-- Catatan -->
                 <div class="mt-12 text-center text-sm text-gray-500">
-                    <p>Terima kasih telah berbelanja di Toko Sepatu MassDik!</p>
+                    <p>Terima kasih telah berbelanja di Toko Sepatu Mang Kus!</p>
                     <p>Ini adalah invoice yang dibuat secara otomatis oleh sistem.</p>
                 </div>
 

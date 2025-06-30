@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Toko Sepatu MassDik - Step Into Style</title>
+    <title>Toko Sepatu Mang Kus - Step Into Style</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -83,8 +83,8 @@
                         <!-- Logo -->
                         <div class="flex">
                             <a href="/">
-                                <span class="sr-only">Toko Sepatu MassDik</span>
-                                <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Toko Sepatu MassDik</h1>
+                                <span class="sr-only">Toko Sepatu Mang Kus</span>
+                                <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Toko Sepatu Mang Kus</h1>
                             </a>
                         </div>
 
@@ -110,34 +110,7 @@
                                 </div>
                             @endif
 
-                            <!-- Search -->
-                            <div class="flex lg:ml-6">
-                                <a href="#"
-                                    class="p-2 text-gray-400 hover:text-gray-500 dark:text-gray-400 dark:hover:text-gray-300">
-                                    <span class="sr-only">Search</span>
-                                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                        stroke="currentColor" aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-                                    </svg>
-                                </a>
-                            </div>
-
-                            <!-- Cart -->
-                            <div class="ml-4 flow-root lg:ml-6">
-                                <a href="@guest{{ route('login') }}@else{{ url('/cart') }}@endguest"
-                                    class="group -m-2 flex items-center p-2">
-                                    <svg class="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-300"
-                                        fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                        aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.658-.463 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
-                                    </svg>
-                                    <span
-                                        class="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800 dark:text-gray-300 dark:group-hover:text-white">0</span>
-                                    <span class="sr-only">items in cart, view bag</span>
-                                </a>
-                            </div>
+                          
                         </div>
                     </div>
                 </div>
@@ -377,7 +350,7 @@
             <div class="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
                 <div class="xl:grid xl:grid-cols-3 xl:gap-8">
                     <div class="space-y-8">
-                        <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Toko Sepatu MassDik</h1>
+                        <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Toko Sepatu Mang Kus</h1>
                         <p class="text-sm leading-6 text-gray-600 dark:text-gray-300">Membawa gaya dan kenyamanan ke
                             setiap langkah Anda.</p>
                         <div class="flex space-x-6">
@@ -435,7 +408,7 @@
                     </div>
                 </div>
                 <div class="mt-16 border-t border-gray-900/10 dark:border-gray-700 pt-8 sm:mt-20 lg:mt-24">
-                    <p class="text-xs leading-5 text-gray-500 dark:text-gray-400">© {{ date('Y') }} Toko Sepatu MassDik,
+                    <p class="text-xs leading-5 text-gray-500 dark:text-gray-400">© {{ date('Y') }} Toko Sepatu Mang Kus,
                         Inc. All
                         rights reserved.</p>
                 </div>
