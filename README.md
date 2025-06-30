@@ -7,31 +7,27 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## Tentang Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Laravel itu seperti mie instan buat developer: cepat, praktis, dan bikin nagih! Framework ini siap membantu kamu mengatasi masalah-masalah ngoding yang bikin pusing, mulai dari routing sampai migrasi database. Pokoknya, Laravel bikin hidup developer lebih santai, kayak ngoding sambil ngopi.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- Routing secepat kilat, kayak pesanan ojol pas lagi sepi.
+- Dependency injection? Tenang, Laravel udah kayak tukang sulap, semua bisa muncul tiba-tiba.
+- Mau simpan data? Laravel punya banyak pilihan, kayak warteg deket rumah.
+- ORM-nya ekspresif, kayak stand up comedian lagi open mic.
+- Migrasi database? Gampang, tinggal klik-klik, data langsung pindah.
+- Proses job di belakang layar, biar kamu bisa rebahan duluan.
+- Broadcast event real-time, biar info nyampe sebelum gosip tetangga.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Laravel itu ramah, kuat, dan siap nemenin kamu bikin aplikasi gede tanpa drama.
 
-## Learning Laravel
+## Belajar Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Dokumentasi Laravel lengkap banget, kayak contekan pas ujian. Ada juga [Laravel Bootcamp](https://bootcamp.laravel.com) buat kamu yang suka belajar sambil praktek. Kalau males baca, langsung aja ke [Laracasts](https://laracasts.com), video tutorialnya banyak, dijamin nggak bikin ngantuk!
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Sponsor Laravel
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Terima kasih buat para sponsor yang udah bantu Laravel tetap eksis. Mau jadi sponsor? Cek aja [Laravel Partners program](https://partners.laravel.com).
 
 ### Premium Partners
 
@@ -44,18 +40,22 @@ We would like to extend our thanks to the following sponsors for funding Laravel
 - **[Redberry](https://redberry.international/laravel-development)**
 - **[Active Logic](https://activelogic.com)**
 
-## Contributing
+## Kontribusi
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Mau ikut nyumbang kode? Silakan baca panduannya di [dokumentasi Laravel](https://laravel.com/docs/contributions). Jangan lupa bawa cemilan biar semangat!
 
-## Code of Conduct
+## Kode Etik
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Biar komunitas tetap adem, yuk patuhi [Kode Etik](https://laravel.com/docs/contributions#code-of-conduct). Jangan baper, jangan nyinyir, damai itu indah!
 
-## Security Vulnerabilities
+## Keamanan
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Kalau nemu bug atau celah keamanan, langsung email ke Taylor Otwell di [taylor@laravel.com](mailto:taylor@laravel.com). Jangan diumbar di grup, nanti jadi bahan gibah!
 
-## License
+## Lisensi
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Laravel itu open-source, bebas dipakai, asal jangan dipake buat modus. Lisensinya [MIT](https://opensource.org/licenses/MIT).
+
+## Tentang Saya
+
+Halo! Saya pengembang web yang suka ngoding sambil ngopi dan bercanda. Lagi belajar Laravel biar bisa bikin aplikasi keren, bukan cuma aplikasi pinjam uang. Suka backend, API, dan teknologi web modern. Kalau mau diskusi atau kolaborasi, jangan sungkan, saya nggak gigit kok!
