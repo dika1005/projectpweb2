@@ -53,7 +53,7 @@ Route::middleware(['auth', IsAdmin::class])->group(function () {
 
 Route::middleware('auth')->group(function () {
     // Halaman daftar produk
-    Route::get('/produk', [UserController::class, 'showProducts'])->name('home.products');
+    Route::get('/product', [UserController::class, 'showProducts'])->name('home.products');
 
     // Form & proses pemesanan
     Route::get('/pesan/{product}', [UserController::class, 'orderForm'])->name('orders.create');
