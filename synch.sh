@@ -63,10 +63,6 @@ cleanup() {
 trap cleanup EXIT
 
 # === Validasi Awal ===
-if [ "$SCRIPT_USER" != "root" ]; then
-    log_error "Skrip ini harus dijalankan sebagai root (atau via sudo) untuk mengatur permissions dan me-restart service."
-    exit 1
-fi
 
 if [ -z "$WEB_USER" ]; then
     log_error "Variabel WEB_USER belum diatur. Edit script dan isi nama user web server."
