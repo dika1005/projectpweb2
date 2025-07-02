@@ -21,8 +21,8 @@ echo "--- Mengatur Izin Direktori Induk agar Nginx dapat Mengakses ---"
 
 # 1. Pastikan /home/sorabi/ memiliki izin eksekusi (dan baca) untuk others
 # Ini penting agar www-data bisa masuk ke direktori home sorabi
-echo "Mengatur izin untuk /home/sorabi/..."
-sudo chmod o+rx /home/sorabi/
+echo "Mengatur izin untuk /home/dika/..."
+sudo chmod o+rx /home/dika/
 
 # 2. Pastikan direktori root proyek itu sendiri memiliki izin yang sama
 echo "Mengatur izin untuk $PROJECT_ROOT_DIR..."
