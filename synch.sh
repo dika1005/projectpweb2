@@ -2,7 +2,7 @@
 
 # Jangan masukan komentar dalam kode
 
-PROJECT_ROOT_DIR="/home/sorabi/projectpweb2"
+PROJECT_ROOT_DIR="/home/dika/projectpweb2"
 WEB_USER="www-data"    
 # Untuk Laravel, kita ingin www-data memiliki kontrol penuh atas storage dan bootstrap/cache
 PROJECT_OWNER="www-data" 
